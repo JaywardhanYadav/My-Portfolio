@@ -40,7 +40,8 @@ const Contact = () => {
                         method="POST"
                     >
                         {/* Access Key - REPLACE THIS WITH YOUR KEY */}
-                        <input type="hidden" name="access_key" value="c611a187-77cf-4c05-9be5-fc9abdb189d1" />
+                        <input type="hidden" name="access_key" value="d029973a-20fa-4826-a48c-c7312181bebd" />
+                        <input type="hidden" name="from_name" value="My First Form" />
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <input
                                 name="first_name"

@@ -66,7 +66,7 @@ export const resumeData = {
     social: [
         {
             name: "Email",
-            url: "mailto:jaywardhan0310@gmail.com",
+            url: "mailto:durvankur9850@gmail.com",
             icon: Mail
         },
         {
