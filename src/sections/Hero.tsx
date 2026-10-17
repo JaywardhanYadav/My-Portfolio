@@ -7,7 +7,7 @@ import { Download, ArrowRight, Sparkles } from 'lucide-react';
 const roles = [
     "AI/ML Engineer",
     "Data Scientist",
-    "Generative AI Specialist",
+    "Generative AI Engineer",
     "Agentic AI & RAG Architect",
     "MLOps Engineer"
 ];
