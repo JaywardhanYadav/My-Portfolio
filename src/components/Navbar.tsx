@@ -33,11 +33,32 @@ const Navbar = () => {
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between">
-                    <div className="flex-shrink-0">
+                    <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
                         <a href="#home" className="text-xl md:text-2xl font-black text-white tracking-wider flex items-center gap-1 group">
                             <span>Jaywardhan</span>
                             <span className="text-cyan-400 group-hover:animate-pulse">.ai</span>
                         </a>
+
+                        {/* Quick Email, LinkedIn, GitHub & Resume Icons */}
+                        <div className="flex items-center gap-1 sm:gap-1.5 pl-2 sm:pl-3 border-l border-gray-700/80">
+                            {resumeData.social.map((item) => {
+                                const isResume = item.name === 'Resume';
+                                return (
+                                    <a
+                                        key={item.name}
+                                        href={item.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        download={isResume ? "Jaywardhan_Yadav_Resume.pdf" : undefined}
+                                        title={item.name}
+                                        aria-label={item.name}
+                                        className="p-1.5 sm:p-2 text-gray-400 hover:text-cyan-400 hover:bg-cyan-400/10 rounded-lg transition-all duration-200"
+                                    >
+                                        <item.icon size={17} />
+                                    </a>
+                                );
+                            })}
+                        </div>
                     </div>
 
                     <div className="hidden md:flex items-center space-x-6">
@@ -103,6 +124,28 @@ const Navbar = () => {
                                 <Download size={16} />
                                 <span>Download Resume (PDF)</span>
                             </a>
+                        </div>
+
+                        {/* Mobile Social Icons Grid */}
+                        <div className="pt-3 mt-2 border-t border-gray-800 grid grid-cols-4 gap-2 text-center">
+                            {resumeData.social.map((item) => {
+                                const isResume = item.name === 'Resume';
+                                return (
+                                    <a
+                                        key={item.name}
+                                        href={item.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        download={isResume ? "Jaywardhan_Yadav_Resume.pdf" : undefined}
+                                        title={item.name}
+                                        className="flex flex-col items-center justify-center py-2 px-1 text-gray-400 hover:text-cyan-400 hover:bg-gray-800/50 rounded-lg transition-colors text-xs"
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        <item.icon size={18} />
+                                        <span className="text-[10px] mt-1">{item.name}</span>
+                                    </a>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
