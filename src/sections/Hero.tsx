@@ -79,7 +79,7 @@ const Hero = () => {
                     <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
                         <a
                             href="#projects"
-                            className="inline-flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-full shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:shadow-[0_0_30px_rgba(34,211,238,0.7)] transition-all duration-300 transform hover:-translate-y-0.5"
+                            className="inline-flex items-center gap-2 px-6 py-3.5 border-2 border-cyan-400/80 text-cyan-300 hover:text-black hover:bg-cyan-400 font-semibold rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(34,211,238,0.2)] hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] transform hover:-translate-y-0.5"
                         >
                             <span>Explore Projects</span>
                             <ArrowRight size={18} />

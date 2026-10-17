@@ -1,4 +1,4 @@
-import { MapPin, Mail, Phone, Send, Github, Linkedin, FileText } from 'lucide-react';
+import { MapPin, Mail, Send, Github, Linkedin, FileText } from 'lucide-react';
 import SectionWrapper from '../components/SectionWrapper';
 import { resumeData } from '../data/resume';
 
@@ -21,7 +21,7 @@ const Contact = () => {
                     <div>
                         <h3 className="text-2xl font-bold text-white mb-3">Let's Build Something Exceptional</h3>
                         <p className="text-gray-300 leading-relaxed text-sm sm:text-base">
-                            I am currently open to full-time AI/ML Engineer opportunities, research collaborations, and innovative GenAI consulting projects. Feel free to reach out directly through email, phone, or LinkedIn.
+                            I am currently open to full-time AI/ML Engineer opportunities, research collaborations, and innovative GenAI consulting projects. Feel free to reach out directly through email or LinkedIn.
                         </p>
                     </div>
 
@@ -38,22 +38,6 @@ const Contact = () => {
                                 <p className="text-xs text-gray-400 font-medium">Direct Email</p>
                                 <p className="text-white font-semibold text-sm sm:text-base group-hover:text-cyan-300 transition-colors">
                                     {resumeData.contactDetails.email}
-                                </p>
-                            </div>
-                        </a>
-
-                        {/* Phone */}
-                        <a
-                            href={`tel:${resumeData.contactDetails.phone.replace(/\s+/g, '')}`}
-                            className="flex items-center gap-4 p-4 rounded-2xl bg-[#1f242d] border border-gray-800 hover:border-cyan-400/60 transition-all duration-300 hover:-translate-x-1 group"
-                        >
-                            <div className="w-12 h-12 bg-cyan-400/10 rounded-xl flex items-center justify-center text-cyan-400 group-hover:bg-cyan-400 group-hover:text-black transition-colors shrink-0">
-                                <Phone size={22} />
-                            </div>
-                            <div>
-                                <p className="text-xs text-gray-400 font-medium">Phone / WhatsApp</p>
-                                <p className="text-white font-semibold text-sm sm:text-base group-hover:text-cyan-300 transition-colors">
-                                    {resumeData.contactDetails.phone}
                                 </p>
                             </div>
                         </a>

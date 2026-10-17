@@ -38,7 +38,6 @@ export const resumeData = {
     role: "AI/ML Engineer",
     tagline: "Building Production-Grade Agentic AI, Hybrid RAG Platforms & MLOps Systems",
     email: "jaywardhantech@gmail.com",
-    phone: "+91 9325528927",
     location: "Pune, Maharashtra, India",
     resumePdf: "/Jaywardhan_Yadav_Resume.pdf",
     
@@ -302,7 +301,6 @@ export const resumeData = {
 
     contactDetails: {
         email: "jaywardhantech@gmail.com",
-        phone: "+91 9325528927",
         location: "Pune, Maharashtra, India",
         linkedIn: "linkedin.com/in/jaywardhanyadav",
         github: "github.com/JaywardhanYadav"
