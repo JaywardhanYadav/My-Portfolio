@@ -1,60 +1,94 @@
-import { GraduationCap, Brain, Database, LineChart } from 'lucide-react';
+import { GraduationCap, Brain, Cpu, Rocket, Download, ArrowUpRight } from 'lucide-react';
 import SectionWrapper from '../components/SectionWrapper';
+import { resumeData } from '../data/resume';
 
 const About = () => {
     return (
-        <SectionWrapper id="about" className="bg-[#242424]/50">
-            <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-                About <span className="text-cyan-400">Me</span>
-            </h2>
+        <SectionWrapper id="about" className="bg-[#1a1f26]/60">
+            <div className="text-center mb-14">
+                <span className="text-cyan-400 font-semibold text-sm tracking-wider uppercase">Background & Focus</span>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mt-2">
+                    About <span className="text-cyan-400">Me</span>
+                </h2>
+            </div>
 
             <div className="flex flex-col lg:flex-row gap-12 items-center">
-                {/* Left Column: Text Content */}
-                <div className="flex-1 space-y-8 text-center lg:text-left">
-                    <h3 className="text-3xl font-bold text-white leading-tight">
-                        Transforming Data into <span className="text-cyan-400">Actionable Insights</span>
+                {/* Left Column: Story & Narrative */}
+                <div className="flex-1 space-y-6 text-center lg:text-left">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-white leading-snug">
+                        Architecting <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Production-Grade Agentic AI</span> & Intelligent Systems
                     </h3>
-                    <p className="text-gray-300 leading-relaxed text-lg">
-                        I am a <strong className="text-white">Data Science postgraduate</strong> with a deep passion for uncovering hidden patterns in complex datasets. My expertise lies in bridging the gap between raw data and strategic decision-making through <strong className="text-cyan-400">Machine Learning</strong>, <strong className="text-cyan-400">NLP</strong>, and <strong className="text-cyan-400">Business Intelligence</strong>.
-                    </p>
-                    <p className="text-gray-300 leading-relaxed text-lg">
-                        I thrive on solving real-world challenges, building intelligent systems that learn and adapt. Whether it's crafting sophisticated <strong className="text-white">AI models</strong> or designing intuitive <strong className="text-white">dashboards</strong>, my goal is to drive innovation through data.
+
+                    <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
+                        I am an <strong className="text-white">AI/ML Engineer</strong> with an M.Sc. in Data Science (<strong className="text-cyan-300 font-semibold">CGPA 9.60, Silver Medalist</strong>) specialized in building reliable autonomous agents and enterprise retrieval systems.
                     </p>
 
-                    <div className="pt-4">
+                    <p className="text-gray-300 leading-relaxed text-base sm:text-lg">
+                        My practical engineering focuses on solving complex real-world workflows: shipping <strong className="text-cyan-400">LangGraph multi-agent planners</strong> with Human-in-the-Loop governance and Model Context Protocol (MCP), designing <strong className="text-cyan-400">two-stage hybrid RAG engines</strong> with verified citation-level grounding, and constructing <strong className="text-cyan-400">end-to-end MLOps pipelines</strong> with automated drift monitoring and Dockerized microservices.
+                    </p>
+
+                    <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a
+                            href={resumeData.resumePdf}
+                            download="Jaywardhan_Yadav_Resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-400 text-black font-semibold rounded-xl shadow-md hover:bg-cyan-300 transition-all duration-300 transform hover:-translate-y-0.5"
+                        >
+                            <Download size={18} />
+                            <span>Download Full Resume</span>
+                        </a>
+
                         <a
                             href="#contact"
-                            className="inline-block px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold rounded-xl shadow-lg hover:shadow-cyan-500/30 hover:scale-105 transition-all duration-300"
+                            className="inline-flex items-center gap-2 px-6 py-3 bg-[#242a35] hover:bg-[#2e3747] text-white font-medium rounded-xl border border-gray-700 transition-all duration-300"
                         >
-                            Let's Collaborate
+                            <span>Let's Discuss AI</span>
+                            <ArrowUpRight size={18} />
                         </a>
                     </div>
                 </div>
 
-                {/* Right Column: Feature Grid (Replacing Photo) */}
-                <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                    <div className="bg-[#1f242d] p-6 rounded-2xl border border-gray-800 hover:border-cyan-400/50 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
-                        <GraduationCap className="text-cyan-400 mb-4 group-hover:scale-110 transition-transform" size={40} />
-                        <h4 className="text-xl font-bold text-white mb-2">Education</h4>
-                        <p className="text-gray-400 text-sm">M.Sc Data Science (CGPA 9.73)<br />Dr D Y Patil College</p>
+                {/* Right Column: Key Pillars */}
+                <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-5 w-full">
+                    <div className="bg-[#1f242d] p-6 rounded-2xl border border-gray-800 hover:border-cyan-400/60 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
+                        <div className="w-12 h-12 rounded-xl bg-cyan-400/10 flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 group-hover:bg-cyan-400 group-hover:text-black transition-all">
+                            <Brain size={26} />
+                        </div>
+                        <h4 className="text-lg font-bold text-white mb-2">Agentic AI & Orchestration</h4>
+                        <p className="text-gray-400 text-sm leading-relaxed">
+                            Multi-agent state machines with LangGraph, Model Context Protocol (MCP) servers, tool use, and Human-in-the-Loop checkpoints.
+                        </p>
                     </div>
 
-                    <div className="bg-[#1f242d] p-6 rounded-2xl border border-gray-800 hover:border-cyan-400/50 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
-                        <Brain className="text-cyan-400 mb-4 group-hover:scale-110 transition-transform" size={40} />
-                        <h4 className="text-xl font-bold text-white mb-2">AI & Machine Learning</h4>
-                        <p className="text-gray-400 text-sm">Building predictive models and intelligent agents using LLMs & NLP.</p>
+                    <div className="bg-[#1f242d] p-6 rounded-2xl border border-gray-800 hover:border-cyan-400/60 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
+                        <div className="w-12 h-12 rounded-xl bg-cyan-400/10 flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 group-hover:bg-cyan-400 group-hover:text-black transition-all">
+                            <Cpu size={26} />
+                        </div>
+                        <h4 className="text-lg font-bold text-white mb-2">Hybrid RAG & Evaluation</h4>
+                        <p className="text-gray-400 text-sm leading-relaxed">
+                            BM25 + Dense vector search, cross-encoder reranking, custom intent routing, and rigorous benchmarking using Ragas.
+                        </p>
                     </div>
 
-                    <div className="bg-[#1f242d] p-6 rounded-2xl border border-gray-800 hover:border-cyan-400/50 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
-                        <Database className="text-cyan-400 mb-4 group-hover:scale-110 transition-transform" size={40} />
-                        <h4 className="text-xl font-bold text-white mb-2">Data Analytics</h4>
-                        <p className="text-gray-400 text-sm">Expert in raw data processing, EDA, and statistical analysis.</p>
+                    <div className="bg-[#1f242d] p-6 rounded-2xl border border-gray-800 hover:border-cyan-400/60 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
+                        <div className="w-12 h-12 rounded-xl bg-cyan-400/10 flex items-center justify-center text-cyan-400 mb-4 group-hover:scale-110 group-hover:bg-cyan-400 group-hover:text-black transition-all">
+                            <Rocket size={26} />
+                        </div>
+                        <h4 className="text-lg font-bold text-white mb-2">MLOps & Production APIs</h4>
+                        <p className="text-gray-400 text-sm leading-relaxed">
+                            FastAPI async backends, Pydantic V2, MLflow model registries, DVC versioning, Evidently AI drift monitoring, and Docker stacks.
+                        </p>
                     </div>
 
-                    <div className="bg-[#1f242d] p-6 rounded-2xl border border-gray-800 hover:border-cyan-400/50 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
-                        <LineChart className="text-cyan-400 mb-4 group-hover:scale-110 transition-transform" size={40} />
-                        <h4 className="text-xl font-bold text-white mb-2">Visualization</h4>
-                        <p className="text-gray-400 text-sm">Crafting compelling data stories with Power BI and Tableau.</p>
+                    <div className="bg-[#1f242d] p-6 rounded-2xl border border-gray-800 hover:border-cyan-400/60 transition-all duration-300 hover:-translate-y-1 shadow-lg group">
+                        <div className="w-12 h-12 rounded-xl bg-yellow-400/10 flex items-center justify-center text-yellow-400 mb-4 group-hover:scale-110 group-hover:bg-yellow-400 group-hover:text-black transition-all">
+                            <GraduationCap size={26} />
+                        </div>
+                        <h4 className="text-lg font-bold text-white mb-2">Academics & Honors</h4>
+                        <p className="text-gray-400 text-sm leading-relaxed">
+                            M.Sc. Data Science (CGPA 9.60, Silver Medalist), 1st Rank College Research Paper (2025), and 2nd Rank College Hackathon (2026).
+                        </p>
                     </div>
                 </div>
             </div>
