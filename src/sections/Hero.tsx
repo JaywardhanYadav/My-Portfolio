@@ -104,26 +104,10 @@ const Hero = () => {
                             <span>Certifications</span>
                         </a>
                     </div>
-
-                    {/* Social links */}
-                    <div className="flex items-center justify-center lg:justify-start gap-3 pt-3">
-                        {resumeData.social.map((social) => (
-                            <a
-                                key={social.name}
-                                href={social.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                title={social.name}
-                                className="p-2.5 border border-gray-700 rounded-full text-gray-300 hover:text-cyan-400 hover:border-cyan-400 hover:bg-cyan-400/10 transition-all duration-200 shadow-sm"
-                            >
-                                <social.icon size={20} />
-                            </a>
-                        ))}
-                    </div>
                 </div>
 
-                {/* Profile Image with Glow Effect */}
-                <div className="flex-1 flex justify-center items-center relative">
+                {/* Profile Image (Slightly Above) with Interactive Social Dock Below */}
+                <div className="flex-1 flex flex-col items-center justify-center relative -translate-y-3 lg:-translate-y-6">
                     <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
                         {/* Glowing Ambient Circles */}
                         <div className="absolute inset-0 rounded-full border-4 border-cyan-400/25 blur-md animate-pulse"></div>
@@ -131,13 +115,39 @@ const Hero = () => {
                         <div className="absolute -inset-8 bg-gradient-to-tr from-cyan-500/10 to-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
 
                         {/* Main Image Container */}
-                        <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-cyan-400/80 shadow-[0_0_40px_rgba(34,211,238,0.35)] flex justify-center items-center bg-[#1f242d]">
+                        <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-cyan-400/90 shadow-[0_0_50px_rgba(34,211,238,0.4)] flex justify-center items-center bg-[#1f242d]">
                             <img
                                 src={profileImage}
                                 alt={resumeData.name}
                                 className="w-full h-full rounded-full object-cover object-top hover:scale-105 transition-transform duration-500"
                             />
                         </div>
+                    </div>
+
+                    {/* Attractive & Interactive Icons Dock Below Photo */}
+                    <div className="mt-8 flex items-center gap-3 sm:gap-4 bg-[#181d24]/90 backdrop-blur-xl border border-cyan-400/40 px-5 py-3 rounded-2xl shadow-[0_10px_35px_rgba(0,0,0,0.6),0_0_25px_rgba(34,211,238,0.25)] hover:border-cyan-400 transition-all duration-300">
+                        {resumeData.social.map((social) => {
+                            const isResume = social.name === 'Resume';
+                            return (
+                                <a
+                                    key={social.name}
+                                    href={social.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    download={isResume ? "Jaywardhan_Yadav_Resume.pdf" : undefined}
+                                    title={isResume ? "Download Resume (PDF)" : social.name}
+                                    aria-label={social.name}
+                                    className="group relative p-3 rounded-xl bg-[#1f242d] text-gray-300 hover:text-cyan-300 hover:bg-cyan-400/20 border border-gray-700/80 hover:border-cyan-400 transition-all duration-300 transform hover:-translate-y-1.5 hover:shadow-[0_0_15px_rgba(34,211,238,0.6)] flex items-center justify-center"
+                                >
+                                    <social.icon size={22} className="transition-transform duration-300 group-hover:scale-110" />
+
+                                    {/* Tooltip on Hover */}
+                                    <span className="absolute -top-9 px-2.5 py-1 bg-[#101419] border border-cyan-400/50 text-cyan-300 text-xs font-semibold rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap shadow-lg">
+                                        {social.name}
+                                    </span>
+                                </a>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
