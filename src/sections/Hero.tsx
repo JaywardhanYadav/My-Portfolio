@@ -6,10 +6,10 @@ import { Download, ArrowRight, Sparkles } from 'lucide-react';
 
 const roles = [
     "AI/ML Engineer",
-    "Agentic AI Specialist",
-    "LangGraph & RAG Architect",
-    "MLOps Engineer",
-    "FastAPI & LLM Systems Builder"
+    "Data Scientist",
+    "Generative AI Specialist",
+    "Agentic AI & RAG Architect",
+    "MLOps Engineer"
 ];
 
 const Hero = () => {
@@ -50,12 +50,12 @@ const Hero = () => {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
                         </span>
-                        <span>Open to AI/ML & Agentic AI Opportunities</span>
+                        <span>Open to AI/ML & Generative AI Opportunities</span>
                     </div>
 
                     <div>
                         <h2 className="text-xl md:text-2xl font-semibold text-cyan-400 tracking-wide">
-                            Hello, I'm
+                            Hello, This is
                         </h2>
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mt-1">
                             {resumeData.name}
@@ -63,7 +63,7 @@ const Hero = () => {
                     </div>
 
                     <div className="text-2xl sm:text-3xl font-medium text-gray-200 min-h-[44px] flex items-center justify-center lg:justify-start">
-                        <span>I build </span>
+                        <span>I'm {/^[aeiou]/i.test(displayedText || roles[currentRoleIndex]) ? 'an' : 'a'}{' '}</span>
                         <span className="ml-2 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-300 to-blue-400 font-bold">
                             {displayedText}
                         </span>
