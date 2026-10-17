@@ -70,15 +70,10 @@ const Hero = () => {
                         <span className="animate-pulse text-cyan-400 font-light ml-1">|</span>
                     </div>
 
-                    {/* 4-Line Summary */}
-                    <div className="text-gray-300 max-w-2xl mx-auto lg:mx-0 text-base sm:text-lg space-y-2 py-1">
-                        {resumeData.summaryLines.map((line, idx) => (
-                            <p key={idx} className="flex items-start gap-3 leading-relaxed">
-                                <span className="text-cyan-400 font-bold shrink-0 text-lg leading-snug">›</span>
-                                <span>{line}</span>
-                            </p>
-                        ))}
-                    </div>
+                    {/* Summary Paragraph */}
+                    <p className="text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed text-base sm:text-lg">
+                        {resumeData.summary}
+                    </p>
 
                     {/* CTA Buttons */}
                     <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">

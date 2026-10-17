@@ -43,14 +43,8 @@ export const resumeData = {
     resumePdf: "/Jaywardhan_Yadav_Resume.pdf",
     
     summary:
-        "M.Sc. in Data Science graduate (CGPA 9.60) with strong foundations in Machine Learning, Generative AI, and Agentic Systems. Experienced in building production-grade RAG platforms, multi-agent workflows, and end-to-end MLOps pipelines. Proficient in Python, PyTorch, LangGraph, FastAPI, Docker, and model deployment. Actively seeking opportunities as an AI/ML Engineer to build scalable intelligent systems.",
+        "M.Sc. in Data Science graduate with a 9.60 CGPA from Dr. D. Y. Patil College with solid foundations in Machine Learning, Generative AI, Multi-Agent Workflows, and RAG Systems. Hands-on expertise in Python, PyTorch, LangGraph, FastAPI, Docker, and End-to-End MLOps. Actively seeking opportunities as an AI/ML Engineer to build scalable, high-impact systems.",
 
-    summaryLines: [
-        "M.Sc. in Data Science graduate with an outstanding 9.60 CGPA from Dr. D. Y. Patil College.",
-        "Solid foundations in Machine Learning, Generative AI, Multi-Agent Workflows & RAG Systems.",
-        "Hands-on expertise in Python, PyTorch, LangGraph, FastAPI, Docker, and End-to-End MLOps.",
-        "Actively seeking opportunities as an AI/ML Engineer to build scalable, high-impact systems."
-    ],
 
     education: [
         {
