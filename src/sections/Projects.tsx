@@ -4,7 +4,7 @@ import { resumeData } from '../data/resume';
 
 const Projects = () => {
     return (
-        <SectionWrapper id="projects" className="bg-[#1a1f26]/60">
+        <SectionWrapper id="projects">
             <div className="text-center mb-16">
                 <span className="text-cyan-400 font-semibold text-sm tracking-wider uppercase">Production Systems</span>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mt-2">
@@ -57,7 +57,7 @@ const Projects = () => {
                         </div>
 
                         {/* Metrics Banner */}
-                        <div className="flex flex-wrap gap-2.5 mb-6">
+                        <div className="flex flex-wrap gap-2.5 mb-5">
                             {project.metrics.map((metric, mIdx) => (
                                 <div
                                     key={mIdx}
@@ -69,10 +69,24 @@ const Projects = () => {
                             ))}
                         </div>
 
-                        {/* Description */}
-                        <p className="text-gray-300 mb-6 leading-relaxed text-sm sm:text-base">
-                            {project.description}
-                        </p>
+                        {/* Problem Statement in Natural Human Language */}
+                        <div className="mb-5 p-4 rounded-2xl bg-[#161a20]/90 border border-amber-500/30 flex items-start gap-3">
+                            <span className="text-amber-400 font-bold text-base mt-0.5 shrink-0">🎯</span>
+                            <div className="text-sm sm:text-base leading-relaxed text-gray-200 text-pretty" style={{ textWrap: 'pretty' }}>
+                                <span className="font-semibold text-amber-300">Problem Statement: </span>
+                                {project.problemStatement}
+                            </div>
+                        </div>
+
+                        {/* 3-Line High-Level System Architecture */}
+                        <div className="mb-6 space-y-2.5 bg-[#14181f]/80 border border-gray-800/90 rounded-2xl p-4 sm:p-5">
+                            {project.overview.map((line, oIdx) => (
+                                <p key={oIdx} className="flex items-start gap-3 text-gray-300 text-sm sm:text-base leading-relaxed text-pretty" style={{ textWrap: 'pretty' }}>
+                                    <span className="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.6)] mt-2 shrink-0"></span>
+                                    <span className="text-pretty">{line}</span>
+                                </p>
+                            ))}
+                        </div>
 
                         {/* Engineering Highlights List */}
                         <div className="space-y-2.5 mb-8 bg-[#181d24] p-5 sm:p-6 rounded-2xl border border-gray-800/80">

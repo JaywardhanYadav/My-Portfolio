@@ -31,7 +31,7 @@ const categoryMeta: Record<string, { title: string; icon: LucideIcon; descriptio
 
 const Skills = () => {
     return (
-        <SectionWrapper id="skills">
+        <SectionWrapper id="skills" className="bg-[#1a1f26]/60">
             <div className="text-center mb-14">
                 <span className="text-cyan-400 font-semibold text-sm tracking-wider uppercase">Technical Proficiencies</span>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mt-2">

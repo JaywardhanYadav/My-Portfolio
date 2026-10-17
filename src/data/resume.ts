@@ -3,8 +3,10 @@ import { Github, Linkedin, Mail, FileText } from "lucide-react";
 export interface ProjectItem {
     title: string;
     subtitle: string;
+    problemStatement: string;
     metrics: string[];
     tech: string[];
+    overview: string[];
     description: string;
     highlights: string[];
     github: string;
@@ -122,6 +124,7 @@ export const resumeData = {
         {
             title: "PlanMyTrip AI",
             subtitle: "Multi-Agent Travel Planning System with Human-in-the-Loop & MCP",
+            problemStatement: "Vacation planning across multiple sites is chaotic, and standard AI chatbots constantly hallucinate prices and exceed budgets. Travelers need an intelligent, budget-locked assistant that coordinates real bookings safely with human approval.",
             github: "https://github.com/JaywardhanYadav/PlanMyTrip-AI",
             metrics: ["96.0% Guardrail Accuracy", "96.8% Budget Compliance", "~$0.018 / Trip LLM Cost", "11.4s p50 Latency"],
             tech: [
@@ -138,8 +141,13 @@ export const resumeData = {
                 "SSE",
                 "JWT"
             ],
+            overview: [
+                "I engineered an autonomous multi-agent travel planner generating personalized itineraries, flights, and hotel bookings to budget.",
+                "The multi-agent architecture uses a LangGraph state machine and 3 standalone MCP servers for live flight, hotel, and weather data.",
+                "Human-in-the-Loop approval checkpoints enforce budget safety before booking, with inference cost optimized to ~$0.018 per trip."
+            ],
             description:
-                "A production-grade multi-agent trip planner orchestrating parallel specialized agents with Human-in-the-Loop checkpoints and external tool decoupling through Model Context Protocol (MCP).",
+                "I built an autonomous travel planner in LangGraph where specialized AI agents coordinate to find live flights, hotels, and weather via MCP—giving users final approval before any booking is made.",
             highlights: [
                 "Architected a two-stage multi-agent travel planner in LangGraph (parallel fan-out agents, then location-grounded hotel matching) with Human-in-the-Loop checkpoints.",
                 "Decoupled live flight, hotel, attraction, and weather data behind 3 standalone Model Context Protocol (MCP) servers.",
@@ -152,6 +160,7 @@ export const resumeData = {
         {
             title: "LegalDrishti AI",
             subtitle: "Two-Stage RAG Legal Research Platform (Indian Law)",
+            problemStatement: "Searching Indian law with basic AI vector search is unreliable because lawyers need exact Bare Act sections and verified citations, not vague summaries or hallucinated laws.",
             github: "https://github.com/JaywardhanYadav/LegalDrishti-AI",
             metrics: ["Hit Rate@5: 48.2% → 86.8%", "MRR@5: 0.384 → 0.762 (+98%)", "68ms Latency", "88.4% Ragas Faithfulness"],
             tech: [
@@ -167,8 +176,13 @@ export const resumeData = {
                 "Redis",
                 "Docker"
             ],
+            overview: [
+                "I developed a two-stage RAG legal research platform that answers Indian law queries with verified citations from 28 Bare Acts.",
+                "Custom Statute Router pre-filters laws before Weaviate hybrid search (BM25 + dense) and FlashRank cross-encoder reranking.",
+                "Async FastAPI backend enables dual-stream grounding over statutory laws and user case vaults, with automated document cleanup."
+            ],
             description:
-                "An intelligent legal research assistant architected around Indian Bare Acts with custom statute routing, hybrid vector/keyword search, and cross-encoder reranking.",
+                "I developed an intelligent legal research platform that scans 28 Indian Bare Acts and personal court files, using hybrid search and reranking to deliver verified answers with exact Section citations.",
             highlights: [
                 "Architected a Two-Stage RAG pipeline with a custom Statute Router (regex intent + weighted n-gram index, IPC/CrPC to BNS/BNSS/BSA mapping) pre-filtering 28 Indian Bare Acts.",
                 "Engineered Weaviate hybrid search (dense + BM25, alpha=0.5) fetching 20 candidates, followed by FlashRank cross-encoder reranking to top 5 with Act, Section, and page-level citations.",
@@ -181,6 +195,7 @@ export const resumeData = {
         {
             title: "Health Insurance Premium Prediction & End-to-End MLOps Pipeline",
             subtitle: "Production ML Inference, Drift Monitoring & Containerized Pipeline",
+            problemStatement: "ML models often work fine in Jupyter notebooks but quietly fail in the real world when customer health trends change, leading to bad insurance pricing if not continuously monitored.",
             github: "https://github.com/JaywardhanYadav/Insurance-premium-prediction-mlops",
             metrics: ["Test R² 0.854", "RMSE 2,891 | MAE 2,201", "20K Records Trained", "Evidently AI Drift Monitoring"],
             tech: [
@@ -198,8 +213,13 @@ export const resumeData = {
                 "Evidently AI",
                 "Docker"
             ],
+            overview: [
+                "I engineered a production ML system that accurately predicts medical insurance premiums from patient clinical health metrics.",
+                "Automated pipeline trains an Optuna-tuned XGBoost and LightGBM ensemble, with experiments in MLflow and data versioned in DVC.",
+                "High-performance FastAPI service serves live predictions with containerized Evidently AI monitoring for production data drift."
+            ],
             description:
-                "An enterprise MLOps solution featuring clinical feature engineering, hyperparameter tuning, model registry, inference API, live drift monitoring, and AWS deployment blueprints.",
+                "I engineered an end-to-end machine learning system that predicts medical insurance costs from patient health indicators, served through a FastAPI backend with automated data drift monitoring in production.",
             highlights: [
                 "Built a config-driven (YAML) end-to-end ML pipeline with clinical feature engineering (blood-pressure parsing, outlier clipping, interaction features like risk_score, smoker_obese, hypertension).",
                 "Trained an Optuna-tuned XGBoost + LightGBM ensemble on 20K records with log-transformed target: Test R² 0.854, RMSE 2,891, MAE 2,201; runs and artifacts tracked in MLflow.",
