@@ -43,13 +43,13 @@ export const resumeData = {
     resumePdf: "/Jaywardhan_Yadav_Resume.pdf",
     
     summary:
-        "AI/ML Engineer (M.Sc. Data Science, CGPA 9.60) building production-grade agentic AI and RAG systems. Shipped a multi-agent LangGraph planner with human-in-the-loop and MCP (96.0% guardrail accuracy, ~$0.018 per trip) and a hybrid-search legal RAG platform that lifted Hit Rate@5 from 48.2% to 86.8% on a 75-query benchmark. Strong in FastAPI, PostgreSQL, Docker and MLOps (MLflow, DVC), taking systems from data and models to deployed APIs.",
+        "M.Sc. in Data Science graduate (CGPA 9.60) with strong foundations in Machine Learning, Generative AI, and Agentic Systems. Experienced in building production-grade RAG platforms, multi-agent workflows, and end-to-end MLOps pipelines. Proficient in Python, PyTorch, LangGraph, FastAPI, Docker, and model deployment. Actively seeking opportunities as an AI/ML Engineer to build scalable intelligent systems.",
 
-    stats: [
-        { label: "M.Sc. CGPA", value: "9.60", note: "Silver Medalist" },
-        { label: "Guardrail Accuracy", value: "96.0%", note: "LangGraph Planner" },
-        { label: "RAG Hit Rate@5", value: "86.8%", note: "+98% MRR Gain" },
-        { label: "Trip Cost", value: "~$0.018", note: "Cost-Optimized LLM" },
+    summaryLines: [
+        "M.Sc. in Data Science graduate with an outstanding 9.60 CGPA from Dr. D. Y. Patil College.",
+        "Solid foundations in Machine Learning, Generative AI, Multi-Agent Workflows & RAG Systems.",
+        "Hands-on expertise in Python, PyTorch, LangGraph, FastAPI, Docker, and End-to-End MLOps.",
+        "Actively seeking opportunities as an AI/ML Engineer to build scalable, high-impact systems."
     ],
 
     education: [

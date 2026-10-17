@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { resumeData } from '../data/resume';
 import SectionWrapper from '../components/SectionWrapper';
 import profileImage from '../assets/profile.jpg';
-import { Download, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
+import { Download, ArrowRight, Sparkles } from 'lucide-react';
 
 const roles = [
     "AI/ML Engineer",
@@ -70,20 +70,13 @@ const Hero = () => {
                         <span className="animate-pulse text-cyan-400 font-light ml-1">|</span>
                     </div>
 
-                    <p className="text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed text-base sm:text-lg">
-                        {resumeData.summary}
-                    </p>
-
-                    {/* Stats Highlights Banner */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 py-2 max-w-2xl mx-auto lg:mx-0">
-                        {resumeData.stats.map((stat, idx) => (
-                            <div
-                                key={idx}
-                                className="bg-[#1f242d]/80 border border-gray-800/80 rounded-xl p-3 text-center backdrop-blur-sm hover:border-cyan-500/40 transition-colors"
-                            >
-                                <div className="text-xl sm:text-2xl font-bold text-cyan-400">{stat.value}</div>
-                                <div className="text-xs text-gray-400 font-medium">{stat.label}</div>
-                            </div>
+                    {/* 4-Line Summary */}
+                    <div className="text-gray-300 max-w-2xl mx-auto lg:mx-0 text-base sm:text-lg space-y-2 py-1">
+                        {resumeData.summaryLines.map((line, idx) => (
+                            <p key={idx} className="flex items-start gap-3 leading-relaxed">
+                                <span className="text-cyan-400 font-bold shrink-0 text-lg leading-snug">›</span>
+                                <span>{line}</span>
+                            </p>
                         ))}
                     </div>
 
@@ -149,17 +142,6 @@ const Hero = () => {
                                 alt={resumeData.name}
                                 className="w-full h-full rounded-full object-cover object-top hover:scale-105 transition-transform duration-500"
                             />
-                        </div>
-
-                        {/* Floating Tech Badges */}
-                        <div className="absolute -bottom-2 -left-4 sm:left-0 bg-[#1a1f26]/90 backdrop-blur-md border border-cyan-400/40 rounded-xl px-3.5 py-2 shadow-lg flex items-center gap-2">
-                            <CheckCircle2 size={16} className="text-cyan-400" />
-                            <span className="text-xs font-semibold text-white">LangGraph & MCP</span>
-                        </div>
-
-                        <div className="absolute -top-2 -right-4 sm:right-0 bg-[#1a1f26]/90 backdrop-blur-md border border-cyan-400/40 rounded-xl px-3.5 py-2 shadow-lg flex items-center gap-2">
-                            <Sparkles size={16} className="text-yellow-400" />
-                            <span className="text-xs font-semibold text-white">M.Sc. CGPA 9.60</span>
                         </div>
                     </div>
                 </div>
